@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="edit_text">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">45dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginEnd">45dp</item>
+        <item name="android:background">@drawable/edit_text</item>
+        <item name="android:elevation">7dp</item>
+        <item name="android:ems">5</item>
+        <item name="android:fontFamily">@font/ralewayregular</item>
+        <item name="android:inputType">textPersonName</item>
+    </style>
+
+    <style name="topText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">40dp</item>
+        <item name="android:fontFamily">@font/ralewaybold</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="secondTitle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/ralewaybold</item>
+        <item name="android:textColor">@color/purple</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="mainButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:backgroundTint">@color/purple</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+</resources>

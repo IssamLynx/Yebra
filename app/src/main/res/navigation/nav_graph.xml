@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/listeMedecins">
+
+    <fragment
+        android:id="@+id/listeMedecins"
+        android:name="com.example.projettdm.ui.affichageMedecins.ListeMedecins"
+        android:label="fragment_liste_medecins"
+        tools:layout="@layout/fragment_liste_medecins">
+        <action
+            android:id="@+id/action_listeMedecins_to_traitementsFragment"
+            app:destination="@id/traitementsFragment" />
+        <action
+            android:id="@+id/action_listeMedecins_to_rendezVousFragment"
+            app:destination="@id/medecinToRdv" />
+    </fragment>
+    <fragment
+        android:id="@+id/traitementsFragment"
+        android:name="com.example.projettdm.ui.TraitementsFragment"
+        android:label="fragment_traitements"
+        tools:layout="@layout/fragment_traitements" />
+    <fragment
+        android:id="@+id/medecinToRdv"
+        android:name="com.example.projettdm.ui.rendezVous.RendezVousFragment"
+        android:label="fragment_rendez_vous"
+        tools:layout="@layout/fragment_rendez_vous" />
+</navigation>
