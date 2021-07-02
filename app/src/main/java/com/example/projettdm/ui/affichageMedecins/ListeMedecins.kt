@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.projettdm.R
 import com.example.projettdm.utils.medecins
@@ -38,6 +39,11 @@ class ListeMedecins : Fragment() {
 
         recyclerView.layoutManager = LinearLayoutManager(requireActivity())
         recyclerView.adapter = adapter
+
+        button9.setOnClickListener {
+            view?.findNavController()?.navigate(R.id.action_listeMedecins_to_confirmerRdv)
+
+        }
     }
 
 

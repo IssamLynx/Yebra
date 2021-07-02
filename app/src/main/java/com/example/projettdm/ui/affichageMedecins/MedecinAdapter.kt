@@ -5,9 +5,13 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.projettdm.R
 import com.example.projettdm.data.model.Medecin
 
@@ -29,10 +33,14 @@ class MedecinAdapter(val context: Context): RecyclerView.Adapter<MyViewHolder>()
         holder.prenom.text=data[position].prenom
         holder.specialite.text=data[position].specialite
         holder.telephone.text=data[position].tel
-        Log.i("issamm",data[position].nom)
-        holder.itemView.setOnClickListener {view ->
 
-            view?.findNavController()?.navigate(R.id.medecinToRdv)
+        Glide.with(context).load("https://shielded-ravine-75627.herokuapp.com/${data[position].image}")
+            .into(holder.image)
+
+        Log.i("issamm",data[position].nom)
+        holder.btn.setOnClickListener {view ->
+
+            view?.findNavController()?.navigate(R.id.action_listeMedecins_to_confirmerRdv)
 
         }
 
@@ -47,5 +55,7 @@ class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     val prenom = view.findViewById<TextView>(R.id.prenomR)
     val specialite = view.findViewById<TextView>(R.id.specialiteR)
     val telephone = view.findViewById<TextView>(R.id.telephoneR)
+    val image=view.findViewById<ImageView>(R.id.imgMedecinL)
+    val btn=view.findViewById<Button>(R.id.button8)
 
 }

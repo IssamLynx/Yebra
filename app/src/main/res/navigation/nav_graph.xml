@@ -13,13 +13,17 @@
         <action
             android:id="@+id/action_listeMedecins_to_traitementsFragment"
             app:destination="@id/traitementsFragment" />
+        <action android:id="@+id/action_listeMedecins_to_rendezVousFragment" />
         <action
-            android:id="@+id/action_listeMedecins_to_rendezVousFragment"
+            android:id="@+id/action_listeMedecins_to_medecinToRdv"
             app:destination="@id/medecinToRdv" />
+        <action
+            android:id="@+id/action_listeMedecins_to_confirmerRdv"
+            app:destination="@id/confirmerRdv" />
     </fragment>
     <fragment
         android:id="@+id/traitementsFragment"
-        android:name="com.example.projettdm.ui.TraitementsFragment"
+        android:name="com.example.projettdm.ui.traitements.TraitementsFragment"
         android:label="fragment_traitements"
         tools:layout="@layout/fragment_traitements" />
     <fragment
@@ -27,4 +31,9 @@
         android:name="com.example.projettdm.ui.rendezVous.RendezVousFragment"
         android:label="fragment_rendez_vous"
         tools:layout="@layout/fragment_rendez_vous" />
+    <fragment
+        android:id="@+id/confirmerRdv"
+        android:name="com.example.projettdm.ui.rendezVous.ConfirmerRdv"
+        android:label="fragment_confirmer_rdv"
+        tools:layout="@layout/fragment_confirmer_rdv" />
 </navigation>
