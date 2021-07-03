@@ -2,11 +2,11 @@ package com.example.projettdm.utils
 
 import androidx.lifecycle.MutableLiveData
 import com.example.projettdm.data.model.Medecin
+import com.example.projettdm.data.model.RendezVous
 
 
-var rendezVousFiltered = MutableLiveData<List<Medecin>>()
-var RendezVous = MutableLiveData<List<Medecin>>()
-var medecins = MutableLiveData<List<Medecin>>()
+ var rendezVous=MutableLiveData<List<RendezVous>>()
+ var rendezVousFiltered=MutableLiveData<List<RendezVous>>()
 
 class Utils {
 }

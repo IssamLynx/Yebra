@@ -6,14 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.projettdm.R
 import com.example.projettdm.data.model.Medecin
+import com.example.projettdm.ui.UserActivity
 
 class MedecinAdapter(val context: Context): RecyclerView.Adapter<MyViewHolder>() {
 
@@ -38,9 +42,11 @@ class MedecinAdapter(val context: Context): RecyclerView.Adapter<MyViewHolder>()
             .into(holder.image)
 
         Log.i("issamm",data[position].nom)
-        holder.btn.setOnClickListener {view ->
-
-            view?.findNavController()?.navigate(R.id.action_listeMedecins_to_confirmerRdv)
+        holder.itemView.setOnClickListener {view ->
+            val viewModel = ViewModelProvider(context as UserActivity).get(MedecinViewModel::class.java)
+            viewModel.medecin=Medecin(data[position].id,data[position].nom,data[position].prenom,data[position].tel
+            ,data[position].latitude,data[position].specialite,data[position].image,data[position].longitude)
+            view?.findNavController()?.navigate(R.id.action_listeMedecins_to_medecinToRdv)
 
         }
 
@@ -56,6 +62,5 @@ class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     val specialite = view.findViewById<TextView>(R.id.specialiteR)
     val telephone = view.findViewById<TextView>(R.id.telephoneR)
     val image=view.findViewById<ImageView>(R.id.imgMedecinL)
-    val btn=view.findViewById<Button>(R.id.button8)
 
 }

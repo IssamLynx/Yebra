@@ -27,7 +27,7 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/imgMedecinL"
+                android:id="@+id/imgMedecinLd"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginStart="8dp"
@@ -37,37 +37,37 @@
                 tools:srcCompat="@tools:sample/avatars" />
 
             <TextView
-                android:id="@+id/nomR"
+                android:id="@+id/nomRd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
-                app:layout_constraintStart_toEndOf="@+id/imgMedecinL"
+                app:layout_constraintStart_toEndOf="@+id/imgMedecinLd"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/prenomR"
+                android:id="@+id/prenomRd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
-                app:layout_constraintStart_toEndOf="@+id/imgMedecinL"
-                app:layout_constraintTop_toBottomOf="@+id/nomR" />
+                app:layout_constraintStart_toEndOf="@+id/imgMedecinLd"
+                app:layout_constraintTop_toBottomOf="@+id/nomRd" />
 
             <TextView
-                android:id="@+id/telephoneR"
+                android:id="@+id/telephoneRd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
-                app:layout_constraintStart_toEndOf="@+id/imgMedecinL"
-                app:layout_constraintTop_toBottomOf="@+id/prenomR" />
+                app:layout_constraintStart_toEndOf="@+id/imgMedecinLd"
+                app:layout_constraintTop_toBottomOf="@+id/prenomRd" />
 
             <TextView
-                android:id="@+id/specialiteR"
+                android:id="@+id/specialiteRd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -75,8 +75,8 @@
                 android:layout_marginBottom="8dp"
                 android:text="TextView"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imgMedecinL"
-                app:layout_constraintTop_toBottomOf="@+id/telephoneR" />
+                app:layout_constraintStart_toEndOf="@+id/imgMedecinLd"
+                app:layout_constraintTop_toBottomOf="@+id/telephoneRd" />
 
             <ImageView
                 android:id="@+id/imageView3"

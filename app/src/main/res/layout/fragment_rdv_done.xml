@@ -38,7 +38,7 @@
         app:layout_constraintTop_toBottomOf="@+id/view1" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/qrcode"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_marginTop="64dp"
@@ -56,5 +56,5 @@
         android:text="Done"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/qrcode" />
 </androidx.constraintlayout.widget.ConstraintLayout>

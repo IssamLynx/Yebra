@@ -37,4 +37,19 @@
         <item name="android:backgroundTint">@color/purple</item>
         <item name="android:textAllCaps">false</item>
     </style>
+
+    <style name="duree">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:fontFamily">@font/ralewaysemibold</item>
+        <item name="android:textColor">@color/purple</item>
+    </style>
+
+    <style name="top_view">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">150dp</item>
+        <item name="android:background">@drawable/auth_shape</item>
+        <item name="android:backgroundTint">#5D73EA</item>
+    </style>
 </resources>

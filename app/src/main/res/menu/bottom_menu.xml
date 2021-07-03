@@ -2,13 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/medecins"
+        android:id="@+id/listeMedecins"
         android:icon="@drawable/ic_baseline_accessibility_24"
         android:title="Medecins" />
 
     <item
-        android:id="@+id/traitements"
+        android:id="@+id/traitementsFragment"
         android:icon="@drawable/ic_baseline_event_note_24"
         android:title="Traitements" />
+    <item
+        android:id="@+id/qrCodeScanner"
+        android:icon="@drawable/ic_baseline_event_note_24"
+        android:title="Qr Code Scanner" />
 
 </menu>

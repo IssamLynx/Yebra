@@ -54,7 +54,7 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/imgMedecinL"
+                    android:id="@+id/imgMedecinLdc"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginStart="8dp"
@@ -64,52 +64,57 @@
                     tools:srcCompat="@tools:sample/avatars" />
 
                 <TextView
-                    android:id="@+id/nomR"
+                    android:id="@+id/nomRdc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:text="TextView"
-                    app:layout_constraintStart_toEndOf="@+id/imgMedecinL"
+                    android:fontFamily="@font/ralewaysemibold"
+                    app:layout_constraintStart_toEndOf="@+id/imgMedecinLdc"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/prenomR"
+                    android:id="@+id/prenomRdc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
+                    android:fontFamily="@font/ralewaysemibold"
                     android:text="TextView"
-                    app:layout_constraintStart_toEndOf="@+id/imgMedecinL"
-                    app:layout_constraintTop_toBottomOf="@+id/nomR" />
+                    app:layout_constraintStart_toEndOf="@+id/imgMedecinLdc"
+                    app:layout_constraintTop_toBottomOf="@+id/nomRdc" />
 
                 <TextView
-                    android:id="@+id/telephoneR"
+                    android:id="@+id/telephoneRdc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
+                    android:fontFamily="@font/ralewaysemibold"
                     android:text="TextView"
-                    app:layout_constraintStart_toEndOf="@+id/imgMedecinL"
-                    app:layout_constraintTop_toBottomOf="@+id/prenomR" />
+                    app:layout_constraintStart_toEndOf="@+id/imgMedecinLdc"
+                    app:layout_constraintTop_toBottomOf="@+id/prenomRdc" />
 
                 <TextView
-                    android:id="@+id/specialiteR"
+                    android:id="@+id/specialiteRdc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/ralewaysemibold"
                     android:text="TextView"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/imgMedecinL"
-                    app:layout_constraintTop_toBottomOf="@+id/telephoneR" />
+                    app:layout_constraintStart_toEndOf="@+id/imgMedecinLdc"
+                    app:layout_constraintTop_toBottomOf="@+id/telephoneRdc" />
 
                 <ImageView
                     android:id="@+id/imageView3"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:layout_marginEnd="52dp"
+
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -119,34 +124,44 @@
         </androidx.cardview.widget.CardView>
 
         <TextView
-            android:id="@+id/textView14"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/heureDebut"
             android:layout_marginStart="48dp"
             android:layout_marginTop="100dp"
             android:text="TextView"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView" />
+            app:layout_constraintTop_toBottomOf="@+id/cardView"
+            style="@style/duree" />
 
         <TextView
-            android:id="@+id/textView15"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/heureFin"
             android:layout_marginTop="100dp"
             android:layout_marginEnd="48dp"
             android:text="TextView"
+            style="@style/duree"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
         <Button
-            android:id="@+id/button4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/confirmerrdvc"
+            style="@style/mainButton"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="80dp"
+            android:layout_marginEnd="8dp"
             android:text="Confirmer"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView14" />
+            app:layout_constraintTop_toBottomOf="@+id/heureDebut" />
+
+        <TextView
+            android:id="@+id/daterdc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="TextView"
+            style="@style/duree"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

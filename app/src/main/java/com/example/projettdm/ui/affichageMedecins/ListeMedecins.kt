@@ -11,7 +11,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.projettdm.R
-import com.example.projettdm.utils.medecins
 import kotlinx.android.synthetic.main.fragment_liste_medecins.*
 
 class ListeMedecins : Fragment() {
@@ -30,9 +29,9 @@ class ListeMedecins : Fragment() {
         super.onActivityCreated(savedInstanceState)
         adapter = MedecinAdapter(requireActivity())
 
-        var viewModel = ViewModelProvider(this).get(MedecinViewModel::class.java)
+        val viewModel = ViewModelProvider(this).get(MedecinViewModel::class.java)
         viewModel.getMedecins();
-        medecins.observe(requireActivity(), Observer { medecins ->
+        viewModel.medecins.observe(requireActivity(), Observer { medecins ->
             adapter.setMedecins(medecins)
 
         })
@@ -40,10 +39,7 @@ class ListeMedecins : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(requireActivity())
         recyclerView.adapter = adapter
 
-        button9.setOnClickListener {
-            view?.findNavController()?.navigate(R.id.action_listeMedecins_to_confirmerRdv)
 
-        }
     }
 
 

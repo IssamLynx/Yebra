@@ -10,16 +10,13 @@
         android:name="com.example.projettdm.ui.affichageMedecins.ListeMedecins"
         android:label="fragment_liste_medecins"
         tools:layout="@layout/fragment_liste_medecins">
-        <action
-            android:id="@+id/action_listeMedecins_to_traitementsFragment"
-            app:destination="@id/traitementsFragment" />
         <action android:id="@+id/action_listeMedecins_to_rendezVousFragment" />
         <action
             android:id="@+id/action_listeMedecins_to_medecinToRdv"
             app:destination="@id/medecinToRdv" />
         <action
-            android:id="@+id/action_listeMedecins_to_confirmerRdv"
-            app:destination="@id/confirmerRdv" />
+            android:id="@+id/action_listeMedecins_to_qrCodeScanner"
+            app:destination="@id/qrCodeScanner" />
     </fragment>
     <fragment
         android:id="@+id/traitementsFragment"
@@ -30,10 +27,28 @@
         android:id="@+id/medecinToRdv"
         android:name="com.example.projettdm.ui.rendezVous.RendezVousFragment"
         android:label="fragment_rendez_vous"
-        tools:layout="@layout/fragment_rendez_vous" />
+        tools:layout="@layout/fragment_rendez_vous" >
+        <action
+            android:id="@+id/action_medecinToRdv_to_confirmerRdv"
+            app:destination="@id/confirmerRdv" />
+    </fragment>
     <fragment
         android:id="@+id/confirmerRdv"
         android:name="com.example.projettdm.ui.rendezVous.ConfirmerRdv"
         android:label="fragment_confirmer_rdv"
-        tools:layout="@layout/fragment_confirmer_rdv" />
+        tools:layout="@layout/fragment_confirmer_rdv" >
+        <action
+            android:id="@+id/action_confirmerRdv_to_rdvDone"
+            app:destination="@id/rdvDone" />
+    </fragment>
+    <fragment
+        android:id="@+id/rdvDone"
+        android:name="com.example.projettdm.ui.rendezVous.RdvDone"
+        android:label="fragment_rdv_done"
+        tools:layout="@layout/fragment_rdv_done" />
+    <fragment
+        android:id="@+id/qrCodeScanner"
+        android:name="com.example.projettdm.ui.qrCodeScanner.QrCodeScanner"
+        android:label="fragment_qr_code_scanner"
+        tools:layout="@layout/fragment_qr_code_scanner" />
 </navigation>

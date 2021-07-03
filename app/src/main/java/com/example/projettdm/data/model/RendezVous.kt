@@ -1,6 +1,8 @@
 package com.example.projettdm.data.model
 
-data class RendezVous(val id:Int,val medecin:String,val date:String,val duree:String)
+import java.util.*
+
+data class RendezVous(val date:Date,val temps_debut:String,val id_medecin:Int,val dure:String,val id_patient:String)
 {
 
 }
