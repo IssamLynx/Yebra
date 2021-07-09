@@ -26,7 +26,7 @@ class MedecinRepository {
             if (call != null) {
                 call.enqueue(object : Callback<List<Medecin>> {
                     override fun onResponse(call: Call<List<Medecin>>, response: Response<List<Medecin>>) {
-                        Log.i(TAG, "Display Borne List: call enqueue")
+                        Log.i(TAG, "Display Medecins List: call enqueue")
 
                         if (!response.isSuccessful) {
                             Log.i(TAG, "CODE:" + response.code().toString())
