@@ -8,10 +8,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import com.example.projettdm.R
+import com.example.projettdm.data.model.RdvDoneModel
+import com.example.projettdm.data.repositories.Pref
 import com.example.projettdm.ui.UserActivity
 import com.example.projettdm.ui.affichageMedecins.MedecinViewModel
 import com.example.projettdm.ui.affichageMedecins.RdvViewModel
+import com.example.projettdm.ui.traitements.TraitementViewModel
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.qrcode.QRCodeWriter
 import kotlinx.android.synthetic.main.fragment_rdv_done.*
@@ -34,8 +38,7 @@ class RdvDone : Fragment() {
         val vm1 = ViewModelProvider(context as UserActivity).get(MedecinViewModel::class.java)
         val vm2 = ViewModelProvider(context as UserActivity).get(RdvViewModel::class.java)
         val formatter: DateFormat = SimpleDateFormat("dd/MM/yyyy")
-        val content = "${vm1.medecin.nom},${vm1.medecin.prenom},${formatter.format(vm2.rdv.date)},${vm2.rdv.temps_debut},${vm2.rdv.dure}"
-
+        val content = "${vm1.medecin.nom},${vm1.medecin.prenom},${formatter.format(vm2.rdv.date)},${vm2.rdv.debut},${vm2.rdv.fin},${vm2.rdv.nom_patient},${vm2.rdv.prenom_patient}"
         val writer = QRCodeWriter()
         val bitMatrix = writer.encode(content, BarcodeFormat.QR_CODE, 200, 200)
         val width = bitMatrix.width
@@ -46,7 +49,18 @@ class RdvDone : Fragment() {
                 bitmap.setPixel(x, y, if (bitMatrix.get(x, y)) Color.BLACK else Color.WHITE)
             }
         }
+
         qrcode.setImageBitmap(bitmap)
+
+        doneRdv.setOnClickListener {
+            val viewModel = ViewModelProvider(this).get(RdvViewModel::class.java)
+            val rdv = RdvDoneModel(vm2.rdv.id, Pref.getId())
+            viewModel.prendreRdv(rdv,requireActivity())
+
+            view?.findNavController()?.navigate(R.id.action_rdvDone_to_rdvPris)
+
+        }
+
 
     }
 }
