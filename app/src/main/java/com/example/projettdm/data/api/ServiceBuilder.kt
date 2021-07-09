@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit
 object ServiceBuilder {
 
     // the Base adresse
-    private const val BASE_URL = "https://shielded-ravine-75627.herokuapp.com/"
+    private const val BASE_URL ="https://shielded-ravine-75627.herokuapp.com/"
 
     val interceptor = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
 
