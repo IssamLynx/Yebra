@@ -48,8 +48,24 @@
 
     <style name="top_view">
         <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">150dp</item>
+        <item name="android:layout_height">110dp</item>
         <item name="android:background">@drawable/auth_shape</item>
         <item name="android:backgroundTint">#5D73EA</item>
+    </style>
+
+    <style name="secondText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="ShapeAppearanceOverlay.App.CornerSize50Percent" parent="">
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="rdv_text_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/ralewaysemibold</item>
     </style>
 </resources>

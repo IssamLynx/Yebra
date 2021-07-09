@@ -14,9 +14,6 @@
         <action
             android:id="@+id/action_listeMedecins_to_medecinToRdv"
             app:destination="@id/medecinToRdv" />
-        <action
-            android:id="@+id/action_listeMedecins_to_qrCodeScanner"
-            app:destination="@id/qrCodeScanner" />
     </fragment>
     <fragment
         android:id="@+id/traitementsFragment"
@@ -45,10 +42,19 @@
         android:id="@+id/rdvDone"
         android:name="com.example.projettdm.ui.rendezVous.RdvDone"
         android:label="fragment_rdv_done"
-        tools:layout="@layout/fragment_rdv_done" />
+        tools:layout="@layout/fragment_rdv_done" >
+        <action
+            android:id="@+id/action_rdvDone_to_rdvPris"
+            app:destination="@id/rdvPris" />
+    </fragment>
     <fragment
         android:id="@+id/qrCodeScanner"
         android:name="com.example.projettdm.ui.qrCodeScanner.QrCodeScanner"
         android:label="fragment_qr_code_scanner"
         tools:layout="@layout/fragment_qr_code_scanner" />
+    <fragment
+        android:id="@+id/rdvPris"
+        android:name="com.example.projettdm.ui.rendezVous.RdvPris"
+        android:label="fragment_rdv_pris"
+        tools:layout="@layout/fragment_rdv_pris" />
 </navigation>
