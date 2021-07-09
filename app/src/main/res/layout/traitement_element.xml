@@ -15,46 +15,67 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/medecinRv"
+            android:id="@+id/titreTraitment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="61dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
+            android:fontFamily="@font/ralewaybold"
+            android:textSize="18sp"
             android:text="TextView"
-            app:layout_constraintBottom_toTopOf="@+id/dateRv"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/DateDebutTraitement"
+            app:layout_constraintStart_toEndOf="@+id/imageTraitement"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/dateRv"
+            android:id="@+id/DateDebutTraitement"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="61dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="TextView"
-            app:layout_constraintBottom_toTopOf="@+id/dureeRv"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/medecinRv" />
+            app:layout_constraintStart_toEndOf="@+id/imageTraitement"
+            app:layout_constraintTop_toBottomOf="@+id/titreTraitment" />
 
         <TextView
-            android:id="@+id/dureeRv"
+            android:id="@+id/DateFinTraitement"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="61dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
             android:text="TextView"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dateRv" />
+            app:layout_constraintStart_toEndOf="@+id/imageTraitement"
+            app:layout_constraintTop_toBottomOf="@+id/DateDebutTraitement" />
 
         <Button
-            android:id="@+id/button7"
+            android:id="@+id/conseilButton"
             style="@style/mainButton"
             android:layout_marginEnd="4dp"
             android:text="Conseil"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/medecinTraitement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="TextView"
+            app:layout_constraintStart_toEndOf="@+id/imageTraitement"
+            app:layout_constraintTop_toBottomOf="@+id/DateFinTraitement" />
+
+        <ImageView
+            android:id="@+id/imageTraitement"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

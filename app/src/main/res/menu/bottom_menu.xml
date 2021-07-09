@@ -11,8 +11,8 @@
         android:icon="@drawable/ic_baseline_event_note_24"
         android:title="Traitements" />
     <item
-        android:id="@+id/qrCodeScanner"
+        android:id="@+id/rdvPris"
         android:icon="@drawable/ic_baseline_event_note_24"
-        android:title="Qr Code Scanner" />
+        android:title="Consultation" />
 
 </menu>

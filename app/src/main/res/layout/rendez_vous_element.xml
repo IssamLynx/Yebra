@@ -16,28 +16,38 @@
 
     <TextView
         android:id="@+id/dateRv"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/debut"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/rdv_text_style" />
+
+    <TextView
+        android:id="@+id/debut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
-        android:fontFamily="@font/ralewaysemibold"
         android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/dureeRv"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/dateRv"
+        style="@style/rdv_text_style"/>
 
     <TextView
-        android:id="@+id/dureeRv"
+        android:id="@+id/fin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:fontFamily="@font/ralewaysemibold"
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dateRv" />
+        style="@style/rdv_text_style"
+        app:layout_constraintTop_toBottomOf="@+id/debut"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

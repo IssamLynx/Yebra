@@ -7,34 +7,32 @@
     tools:context=".ui.rendezVous.ConfirmerRdv">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/view1"
-        android:layout_width="0dp"
-        android:layout_height="150dp"
-        android:background="@drawable/auth_shape"
-        android:backgroundTint="#5D73EA"
+        android:id="@+id/constraintLayout2"
+        style="@style/top_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/textView13"
+            style="@style/topText"
+            android:layout_marginTop="32dp"
             android:text="Détail de votre Rendez-Vous"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             android:textSize="18sp"
-            style="@style/topText"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="158dp"
+        android:layout_height="0dp"
         android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/view1">
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
 
 
         <androidx.cardview.widget.CardView
@@ -69,8 +67,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
-                    android:text="TextView"
                     android:fontFamily="@font/ralewaysemibold"
+                    style="@style/rdv_text_style"
+                    android:text="TextView"
                     app:layout_constraintStart_toEndOf="@+id/imgMedecinLdc"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -80,8 +79,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
-                    android:fontFamily="@font/ralewaysemibold"
                     android:text="TextView"
+                    style="@style/rdv_text_style"
                     app:layout_constraintStart_toEndOf="@+id/imgMedecinLdc"
                     app:layout_constraintTop_toBottomOf="@+id/nomRdc" />
 
@@ -91,6 +90,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
+                    style="@style/rdv_text_style"
                     android:fontFamily="@font/ralewaysemibold"
                     android:text="TextView"
                     app:layout_constraintStart_toEndOf="@+id/imgMedecinLdc"
@@ -104,6 +104,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
                     android:fontFamily="@font/ralewaysemibold"
+                    style="@style/rdv_text_style"
                     android:text="TextView"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/imgMedecinLdc"
@@ -125,27 +126,27 @@
 
         <TextView
             android:id="@+id/heureDebut"
+            style="@style/duree"
             android:layout_marginStart="48dp"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="16dp"
             android:text="TextView"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView"
-            style="@style/duree" />
+            app:layout_constraintTop_toBottomOf="@+id/daterdc" />
 
         <TextView
             android:id="@+id/heureFin"
-            android:layout_marginTop="100dp"
+            style="@style/duree"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="48dp"
             android:text="TextView"
-            style="@style/duree"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView" />
+            app:layout_constraintTop_toBottomOf="@+id/daterdc" />
 
         <Button
             android:id="@+id/confirmerrdvc"
             style="@style/mainButton"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="32dp"
             android:layout_marginEnd="8dp"
             android:text="Confirmer"
             app:layout_constraintEnd_toEndOf="parent"
@@ -154,11 +155,11 @@
 
         <TextView
             android:id="@+id/daterdc"
+            style="@style/duree"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:text="TextView"
-            style="@style/duree"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cardView" />

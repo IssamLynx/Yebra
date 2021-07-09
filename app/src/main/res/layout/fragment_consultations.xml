@@ -9,7 +9,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/view1"
         android:layout_width="0dp"
-        android:layout_height="150dp"
+        android:layout_height="110dp"
         android:background="@drawable/auth_shape"
         android:backgroundTint="#5D73EA"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,11 +20,12 @@
             android:id="@+id/textView12"
 
             style="@style/topText"
+            android:layout_marginTop="32dp"
             android:text="Consultation"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="40dp" />
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView

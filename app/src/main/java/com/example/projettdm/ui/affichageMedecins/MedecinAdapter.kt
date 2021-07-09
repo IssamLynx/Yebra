@@ -1,6 +1,8 @@
 package com.example.projettdm.ui.affichageMedecins
 
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +11,7 @@ import android.widget.Button
 
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
@@ -37,15 +40,27 @@ class MedecinAdapter(val context: Context): RecyclerView.Adapter<MyViewHolder>()
         holder.prenom.text=data[position].prenom
         holder.specialite.text=data[position].specialite
         holder.telephone.text=data[position].tel
-
+        holder.map.setImageResource(R.drawable.ic_map)
         Glide.with(context).load("https://shielded-ravine-75627.herokuapp.com/${data[position].image}")
             .into(holder.image)
+
+        holder.telephone.setOnClickListener {
+        val uri = Uri.parse("tel:${data[position].tel}")
+        val intent = Intent(Intent.ACTION_DIAL, uri)
+        context.startActivity(intent)
+        }
+
+        holder.map.setOnClickListener{
+        val gmmIntentUri = Uri.parse("google.navigation:q=${data[position].latitude},${data[position].longitude}")
+        val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
+        startActivity(context , mapIntent,null)
+        }
 
         Log.i("issamm",data[position].nom)
         holder.itemView.setOnClickListener {view ->
             val viewModel = ViewModelProvider(context as UserActivity).get(MedecinViewModel::class.java)
             viewModel.medecin=Medecin(data[position].id,data[position].nom,data[position].prenom,data[position].tel
-            ,data[position].latitude,data[position].specialite,data[position].image,data[position].longitude)
+            ,data[position].latitude,data[position].specialite,data[position].image,data[position].longitude,"medecin")
             view?.findNavController()?.navigate(R.id.action_listeMedecins_to_medecinToRdv)
 
         }
@@ -62,5 +77,6 @@ class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     val specialite = view.findViewById<TextView>(R.id.specialiteR)
     val telephone = view.findViewById<TextView>(R.id.telephoneR)
     val image=view.findViewById<ImageView>(R.id.imgMedecinL)
+    val map=view.findViewById<ImageView>(R.id.map_direction)
 
 }

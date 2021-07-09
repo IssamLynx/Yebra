@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.projettdm.R
 import kotlinx.android.synthetic.main.fragment_liste_medecins.*
 
+@Suppress("DEPRECATION")
 class ListeMedecins : Fragment() {
 
     private lateinit var adapter: MedecinAdapter
@@ -28,11 +29,12 @@ class ListeMedecins : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         adapter = MedecinAdapter(requireActivity())
-
+        progressBarM.visibility=View.VISIBLE
         val viewModel = ViewModelProvider(this).get(MedecinViewModel::class.java)
         viewModel.getMedecins();
         viewModel.medecins.observe(requireActivity(), Observer { medecins ->
             adapter.setMedecins(medecins)
+            progressBarM.visibility=View.GONE
 
         })
 

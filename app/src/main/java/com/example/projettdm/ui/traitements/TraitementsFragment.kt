@@ -5,30 +5,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.projettdm.R
+import kotlinx.android.synthetic.main.fragment_traitements.*
+import kotlinx.android.synthetic.main.fragment_traitements.view.*
+import java.text.SimpleDateFormat
+import java.util.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [TraitementsFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class TraitementsFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var adapter: TraitementAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,23 +27,49 @@ class TraitementsFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_traitements, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment TraitementsFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            TraitementsFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        enCours.isSelected = true
+        adapter = TraitementAdapter(requireActivity())
+
+        val viewModel = ViewModelProvider(this).get(TraitementViewModel::class.java)
+
+        viewModel.getTraitements();
+
+        val currentDate = SimpleDateFormat("dd/mm/yyyy").parse(SimpleDateFormat("dd/mm/yyyy").format(
+            Date()
+        ))
+        viewModel.traitements.observe(requireActivity(), Observer { traitements ->
+            val filtre = viewModel.traitements.value?.filter { it.date_fin<currentDate.toString() }
+            if (filtre != null) {
+                adapter.setTraitements(filtre)
             }
+
+        })
+
+        termine.setOnClickListener {
+            enCours.isSelected = false
+            termine.isSelected=true
+
+            val filtre = viewModel.traitements.value?.filter { it.date_fin>currentDate.toString() }
+            if (filtre != null) {
+                adapter.setTraitements(filtre)
+            }
+        }
+        enCours.setOnClickListener {
+            enCours.isSelected = true
+            termine.isSelected=false
+
+            val filtre = viewModel.traitements.value?.filter { it.date_fin<currentDate.toString() }
+            if (filtre != null) {
+                adapter.setTraitements(filtre)
+            }
+        }
+        recycleTraitement.layoutManager = LinearLayoutManager(requireActivity())
+        recycleTraitement.adapter = adapter
+
+
     }
+
+
 }

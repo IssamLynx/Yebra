@@ -44,8 +44,8 @@ class ConfirmerRdv : Fragment() {
         prenomRdc.text=vm1.medecin.prenom
         specialiteRdc.text=vm1.medecin.specialite
         telephoneRdc.text=vm1.medecin.tel
-        heureDebut.text=vm2.rdv.temps_debut
-        heureFin.text=vm2.rdv.dure
+        heureDebut.text=vm2.rdv.debut
+        heureFin.text=vm2.rdv.fin
         daterdc.text= formatter.format(vm2.rdv.date)
         Glide.with(requireActivity()).load("https://shielded-ravine-75627.herokuapp.com/${vm1.medecin.image}")
             .into(imgMedecinLdc)
