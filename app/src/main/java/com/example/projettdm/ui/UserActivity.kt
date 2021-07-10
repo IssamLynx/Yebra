@@ -12,6 +12,7 @@ import kotlinx.android.synthetic.main.activity_user.*
 import androidx.navigation.ui.setupWithNavController
 import com.example.projettdm.data.repositories.Pref
 import com.example.projettdm.data.repositories.TraitementRepository
+import com.example.projettdm.data.room.RoomService
 import com.example.projettdm.ui.authentification.MainActivity
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.zxing.integration.android.IntentIntegrator
@@ -33,6 +34,7 @@ class UserActivity : AppCompatActivity() {
             dialog.show()
             view.setOnClickListener {
                     Pref.clear()
+                RoomService.database.getTraitementDao().deleteAllTraitements()
                 val intent=Intent(this,MainActivity::class.java)
                 startActivity(intent)
                 finish()

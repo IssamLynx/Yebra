@@ -16,6 +16,9 @@ interface TraitementDao {
     @Query("SELECT * FROM Traitements")
     fun selectTraitements():List<Traitement>
 
+    @Query("DELETE FROM Traitements")
+    fun deleteAllTraitements()
+
 }
 
 
