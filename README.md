@@ -3,6 +3,8 @@
 Une application mobile pour la gestion des consultations médicales
 Le projet consiste à développer une application mobile permettant aux patients de prendre rendez-vous auprès des médecins et de consulter les traitements médicaux des différentes consultations.
 
+![Smartphones_Mockup_Diagonal_Composition](https://user-images.githubusercontent.com/77902312/125696086-c0b86371-7fd1-4dc6-a7f9-c974354d0738.png)
+
 1.1 Fonctionnalités
 1. Authentification
 L’application doit permettre aux utilisateurs de se connecter et se déconnecter. L’authentification doit se faire avec un numéro de téléphone et un mot de passe.
